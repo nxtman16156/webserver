@@ -1,0 +1,19 @@
+var express = require ("express");
+var app = express();
+var bodyParser = require ("body-parser");
+
+app.use (express.static (__dirname + '/public'));
+app.use (bodyParser.urlencoded ({extended: true}));
+
+app.get ('/helpdesk', function (request, response) {
+	response.sendFile ('public/index.html');
+});
+
+app.post ('/post-suggestion', function (request, response) {
+
+	var name = request.body.na
+
+});
+
+app.listen (4006);
+console.log ("[ HELPDESK ] Server listening on port 4006");

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Helpdesk</title>
+		<script src="http://96.32.82.196/libraries/jquery-3.2.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://96.32.82.196/libraries/bootstrap.min.css">
+		<style>
+			.well {
+				background-color: #eee;
+				border: 1px solid black;
+				border-radius: 20px;
+				width: 100%;
+				padding: 20px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				$("#submit-button").click (function() {
+					var name = document.getElementById ("text-name").value;
+					var suggestion = document.getElementById ("text-changed").value;
+
+					$.post ('helpdesk/post-suggestion', {name, suggestion}, function (data) {
+						console.log (data);
+					});
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="text-center" style="margin-top: 10px;">Helpdesk</h3>
+			<div class="well">
+				<input id="text-name" type="text" class="form-control" placeholder="What is your name?">
+				<input id="text-changed" type="text" class="form-control" placeholder="What do you want added/changed?">
+				<button id="submit-button" class="btn btn-primary btn-block" style="margin-top: 10px;">Submit</button>
+			</div>
+		</div>
+	</body>
+</html>

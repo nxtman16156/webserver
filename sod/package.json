@@ -1,0 +1,14 @@
+{
+  "name": "sod",
+  "version": "1.0.0",
+  "description": "Song of the Day",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodejs app.js"
+  },
+  "author": "Peter Russell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
